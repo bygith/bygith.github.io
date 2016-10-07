@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<title>Path Planning Demonstration</title>
+<style>
+	body { padding:0; margin:0; height:100%; width:100%; }
+</style>
+
+<script type='text/javascript' src='gamecanvas.js'></script>
+<script type='text/javascript' src='pathplanners.js'></script>
+<script type='text/javascript' src='ppHelpers.js'></script>
+
+</head>
+
+<body onload='onload()'>
+
+<input type='button' onClick='startLoc()' value='Place Start Location'>
+<input type='button' onClick='endLoc()' value='Place End Location'>
+<input type='button' onClick='obsLoc()' value='Place Obstacle'>
+<input type='button' onClick='map1()' value='Map 1'> 
+<input type='button' onClick='map2()' value='Map 2'> 
+<input type='button' onClick='map3()' value='Map 3'> 
+<input type='button' onClick='randomize()' value='Random Map'> 
+<input type='button' onClick='createWorld()' value='Reset Graph'> 
+
+
+<form name="WHform" action="" method="GET">
+<input type="button" name="button" value="Set Width/Height:" onClick="setWH(this.form)">
+<input type="text" name="inputbox" value="">
+<input id="files" type="file" />
+<output id="result" />
+</form>
+ 
+<p></p>
+
+
+<form>
+Select Heuristic:
+<select id="HeuristicList" onChange="selectHeuristic()">
+	<option>Manhattan Distance</option>
+	<option>Euclidean Distance</option>
+	<option>Chebyshev Distance</option>
+</select>
+</form>
+
+<input type='button' onClick='Astar()' value='A*'>
+<input type='button' onClick='BFS()' value='BFS'> 
+<input type='button' onClick='Dijkstra()' value='Dijstra'> 
+<input type="button" name="button" value="RRT kSteps:" onClick="setWH2(this.form)">
+<input type="text" name="inputbox2" value="">
+
+<div style="text-align:left;">
+<canvas id="gameCanvas2"></canvas>
+</div>
+
+	
+
+
+</body>
+</html>
